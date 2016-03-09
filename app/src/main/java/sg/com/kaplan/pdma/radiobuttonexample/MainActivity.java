@@ -1,5 +1,6 @@
 package sg.com.kaplan.pdma.radiobuttonexample;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     RadioGroup radioGroup;
+    String gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +37,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.radioButtonBoy:
                 if (checked) {
                     imageView.setImageResource(R.drawable.boy);
+                    gender = "boy";
                 }
                 break;
             case R.id.radioButtonGirl:
                 if (checked) {
                     imageView.setImageResource(R.drawable.girl);
+                    gender = "girl";
                 }
                 break;
         }
-
-        radioGroup.clearCheck();        //clear all selections
-        radioGroup.check(view.getId()); //target
     }
 
 }
